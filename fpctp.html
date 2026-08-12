@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AUW Side Quests — A Field Log</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styling.css" />
+</head>
+<body>
+<header class="heading">
+ <img src="C:\users\aqsa\Downloads\garden.jpeg" class="heading-bg" alt="Chittagong landscape">
+ <div class="heading-inner">
+      <p class="heading-top" style="letter-spacing: 4px;">A FIELD GUIDE FOR</p>
+      <h1 class="heading-title">AUW Side Quests</h1>
+      <p class="heading-tag">21 small adventures,</br>Your ultimate grad list</p>
+      <a href="#quests" class="btn-start">Open the Log ↓</a>
+    </div>
+    <div class="heading-stamp" aria-hidden="true">
+      <svg viewBox="0 0 120 120" class="stamp-ring">
+        <circle cx="60" cy="60" r="52" />
+        <text>
+          <textPath href="#circlePath" startOffset="0%">EXPLORE · COLLECT · REPEAT · EXPLORE · COLLECT · REPEAT · </textPath>
+        </text>
+        <path id="circlePath" d="M 60,60 m -40,0 a 40,40 0 1,1 80,0 a 40,40 0 1,1 -80,0" fill="none"/>
+      </svg>
+      <span class="stamp-center">S.A.P</span>
+    </div>
+  </header>
+  <section class="stat-bar" id="stat-bar">
+    <div class="stat">
+      <span class="stat-value" id="points-total">0</span>
+      <span class="stat-label">points collected</span>
+    </div>
+    <div class="progress-track" role="progressbar" aria-label="Quests logged">
+      <div class="progress-fill" id="progress-fill"></div>
+    </div>
+    <div class="stat">
+      <span class="stat-value" id="quests-total">0 / 21</span>
+      <span class="stat-label">quests logged</span>
+    </div>
+  </section>
+  <section class="controls">
+    <div class="filters" id="filters">
+      <button class="filter-btn active" data-filter="all">All Quests</button>
+      <button class="filter-btn" data-filter="campus">On-Campus</button>
+      <button class="filter-btn" data-filter="city">Off-Campus</button>
+    </div>
+    <input type="text" id="search-input" class="search-input" placeholder="Search the log…" />
+  </section>
+  <main id="quests" class="quest-grid"></main>
+  <p class="empty-state" id="empty-state" hidden>No quests match your search. Try another word.</p>
+  <section class="postcard">
+    <div class="postcard-inner">
+      <h2>Suggest a Quest</h2>
+      <p>Know a spot every AUW student should try? Mail it in and we'll add it to the log.</p>
+      <form id="feedback-form" novalidate>
+        <div class="funny">
+          <label for="name">Your name</label>
+          <input id="name" name="name" type="text" placeholder="e.g. Parsa, Batch of 2029" required />
+        </div>
+        <div class="funny">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="campus">On Campus</option>
+            <option value="city">Off Campus</option>
+          </select>
+        </div>
+        <div class="funny">
+          <label for="idea">Quest idea</label>
+          <textarea id="idea" name="idea" rows="3" placeholder="Drop the quest…" required></textarea>
+        </div>
+        <button type="submit" class="btn-mail">Mail It In</button>
+      </form>
+      <div id="form-response" class="form-response" aria-live="polite"></div>
+    </div>
+  </section>
+  <footer class="site-footer">
+    <p>"Built by AUW students, for AUW students"
+    </br>
+    </br>Chattogram, Bangladesh
+    </br>Suhailah | Afia | Parsa
+    <br>Contact us: auwsidequest@gmail.com</p>
+  </footer>
+  <script src="fctp.js"></script>
+</body>
+</html>
